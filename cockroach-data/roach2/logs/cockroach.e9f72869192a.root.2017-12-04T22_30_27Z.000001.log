@@ -1,0 +1,369 @@
+I171204 22:30:27.700638 1 util/log/clog.go:992  [config] file created at: 2017/12/04 22:30:27
+I171204 22:30:27.700638 1 util/log/clog.go:992  [config] running on machine: e9f72869192a
+I171204 22:30:27.700638 1 util/log/clog.go:992  [config] binary: CockroachDB CCL v1.1.3 (linux amd64, built 2017/11/27 13:59:10, go1.8.3)
+I171204 22:30:27.700638 1 util/log/clog.go:992  [config] arguments: [/cockroach/cockroach start --insecure --join=roach1]
+I171204 22:30:27.700638 1 util/log/clog.go:992  line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
+W171204 22:30:27.700637 1 cli/start.go:777  RUNNING IN INSECURE MODE!
+
+- Your cluster is open for any client that can access <all your IP addresses>.
+- Any user, even root, can log in without providing a password.
+- Any user, connecting as root, can read or write any data in your cluster.
+- There is no network encryption nor authentication, and thus no confidentiality.
+
+Check out how to secure your cluster: https://www.cockroachlabs.com/docs/stable/secure-a-cluster.html
+I171204 22:30:27.700958 1 server/config.go:312  available memory from cgroups (8.0 EiB) exceeds system memory 7.7 GiB, using system memory
+W171204 22:30:27.700970 1 cli/start.go:697  Using the default setting for --cache (128 MiB).
+  A significantly larger value is usually needed for good performance.
+  If you have a dedicated server a reasonable setting is --cache=25% (1.9 GiB).
+I171204 22:30:27.701008 1 cli/start.go:785  CockroachDB CCL v1.1.3 (linux amd64, built 2017/11/27 13:59:10, go1.8.3)
+I171204 22:30:27.801494 1 server/config.go:312  available memory from cgroups (8.0 EiB) exceeds system memory 7.7 GiB, using system memory
+I171204 22:30:27.801524 1 server/config.go:425  system total memory: 7.7 GiB
+I171204 22:30:27.801594 1 server/config.go:427  server configuration:
+max offset                500000000
+cache size                128 MiB
+SQL memory pool size      128 MiB
+scan interval             10m0s
+scan max idle time        200ms
+metrics sample interval   10s
+event log enabled         true
+linearizable              false
+I171204 22:30:27.801743 14 cli/start.go:503  starting cockroach node
+I171204 22:30:27.803448 14 storage/engine/rocksdb.go:406  opening rocksdb instance at "/cockroach/cockroach-data/local"
+W171204 22:30:29.798040 14 gossip/gossip.go:1241  [n?] no incoming or outgoing connections
+I171204 22:30:29.798139 14 storage/engine/rocksdb.go:406  opening rocksdb instance at "/cockroach/cockroach-data"
+I171204 22:30:29.799311 69 gossip/client.go:129  [n?] started gossip client to roach1:26257
+I171204 22:30:29.866849 14 server/config.go:528  [n?] 1 storage engine initialized
+I171204 22:30:29.866870 14 server/config.go:530  [n?] RocksDB cache size: 128 MiB
+I171204 22:30:29.866882 14 server/config.go:530  [n?] store 0: RocksDB, max size 0 B, max open file limit 1043576
+I171204 22:30:29.867059 14 server/server.go:838  [n?] no stores bootstrapped and --join flag specified, awaiting init command.
+I171204 22:30:29.867399 14 storage/stores.go:303  [n?] read 0 node addresses from persistent storage
+I171204 22:30:29.867491 14 storage/stores.go:322  [n?] wrote 1 node addresses to persistent storage
+I171204 22:30:29.867517 14 server/node.go:606  [n?] connecting to gossip network to verify cluster ID...
+I171204 22:30:29.867548 14 server/node.go:631  [n?] node connected via gossip and verified as part of cluster "be9043e5-a548-4755-8b63-b17b8e28f87c"
+I171204 22:30:29.869992 14 kv/dist_sender.go:350  [n?] unable to determine this node's attributes for replica selection; node is most likely bootstrapping
+I171204 22:30:29.870915 14 kv/dist_sender.go:350  [n?] unable to determine this node's attributes for replica selection; node is most likely bootstrapping
+I171204 22:30:29.893989 14 server/node.go:319  [n?] new node allocated ID 2
+I171204 22:30:29.894114 14 gossip/gossip.go:327  [n2] NodeDescriptor set to node_id:2 address:<network_field:"tcp" address_field:"e9f72869192a:26257" > attrs:<> locality:<> ServerVersion:<major_val:1 minor_val:1 patch:0 unstable:0 > 
+I171204 22:30:29.894185 14 server/node.go:389  [n2] node=2: asynchronously bootstrapping engine(s) [<no-attributes>=/cockroach/cockroach-data]
+I171204 22:30:29.894216 14 server/node.go:403  [n2] node=2: started with [] engine(s) and attributes []
+I171204 22:30:29.894337 14 sql/executor.go:408  [n2] creating distSQLPlanner with address {tcp e9f72869192a:26257}
+I171204 22:30:29.898822 14 server/server.go:946  [n2] starting http server at e9f72869192a:8080
+I171204 22:30:29.898836 14 server/server.go:947  [n2] starting grpc/postgres server at e9f72869192a:26257
+I171204 22:30:29.898846 14 server/server.go:948  [n2] advertising CockroachDB node at e9f72869192a:26257
+W171204 22:30:29.898876 14 sql/jobs/registry.go:156  [n2] unable to get node liveness: node not in the liveness table
+E171204 22:30:29.900360 14 sqlmigrations/migrations.go:228  [n2] failed attempt to acquire migration lease: lease /System/"system-version/lease" is not available until at least 1512426686.519632505,0
+I171204 22:30:29.932372 131 server/node.go:587  [n2] bootstrapped store [n2,s2]
+E171204 22:30:29.962095 14 sqlmigrations/migrations.go:228  [n2] failed attempt to acquire migration lease: lease /System/"system-version/lease" is not available until at least 1512426686.519632505,0
+E171204 22:30:30.070810 14 sqlmigrations/migrations.go:228  [n2] failed attempt to acquire migration lease: lease /System/"system-version/lease" is not available until at least 1512426686.519632505,0
+E171204 22:30:30.284678 14 sqlmigrations/migrations.go:228  [n2] failed attempt to acquire migration lease: lease /System/"system-version/lease" is not available until at least 1512426686.519632505,0
+E171204 22:30:30.670785 14 sqlmigrations/migrations.go:228  [n2] failed attempt to acquire migration lease: lease /System/"system-version/lease" is not available until at least 1512426686.519632505,0
+I171204 22:30:30.892360 197 storage/stores.go:322  [n2] wrote 2 node addresses to persistent storage
+I171204 22:30:30.921742 204 storage/replica_raftstorage.go:725  [n2,s2,r2/?:{-}] applying preemptive snapshot at index 22 (id=72c6df38, encoded size=10557, 1 rocksdb batches, 12 log entries)
+I171204 22:30:30.931254 204 storage/replica_raftstorage.go:733  [n2,s2,r2/?:/System/{-NodeLive…}] applied preemptive snapshot in 9ms [clear=0ms batch=0ms entries=0ms commit=9ms]
+I171204 22:30:31.706715 330 storage/raft_transport.go:455  [n2] raft transport stream to node 1 established
+I171204 22:30:32.131014 14 server/server.go:1090  [n2] done ensuring all necessary migrations have run
+I171204 22:30:32.131037 14 server/server.go:1092  [n2] serving sql connections
+I171204 22:30:32.131120 14 cli/start.go:582  node startup completed:
+CockroachDB node starting at 2017-12-04 22:30:32.131060725 +0000 UTC (took 4.4s)
+build:      CCL v1.1.3 @ 2017/11/27 13:59:10 (go1.8.3)
+admin:      http://e9f72869192a:8080
+sql:        postgresql://root@e9f72869192a:26257?application_name=cockroach&sslmode=disable
+logs:       /cockroach/cockroach-data/logs
+store[0]:   path=/cockroach/cockroach-data
+status:     initialized new node, joined pre-existing cluster
+clusterID:  be9043e5-a548-4755-8b63-b17b8e28f87c
+nodeID:     2
+I171204 22:30:32.163828 342 sql/event_log.go:102  [n2] Event: "node_join", target: 2, info: {Descriptor:{NodeID:2 Address:{NetworkField:tcp AddressField:e9f72869192a:26257} Attrs: Locality: ServerVersion:1.1} ClusterID:be9043e5-a548-4755-8b63-b17b8e28f87c StartedAt:1512426629894197939 LastUp:1512426629894197939}
+I171204 22:30:32.536658 303 storage/replica_raftstorage.go:725  [n2,s2,r4/?:{-}] applying preemptive snapshot at index 38 (id=77c8f701, encoded size=91016, 1 rocksdb batches, 28 log entries)
+I171204 22:30:32.571848 303 storage/replica_raftstorage.go:733  [n2,s2,r4/?:/System/{NodeLive…-tsd}] applied preemptive snapshot in 35ms [clear=0ms batch=0ms entries=0ms commit=35ms]
+I171204 22:30:33.138965 30 storage/store.go:2156  [replicaGC,n2,s2,r4/?:/System/{NodeLive…-tsd}] removing replica
+I171204 22:30:33.299165 30 storage/replica.go:767  [replicaGC,n2,s2,r4/?:/System/{NodeLive…-tsd}] removed 27 (17+10) keys in 160ms [clear=0ms commit=160ms]
+I171204 22:30:33.364702 388 storage/replica_raftstorage.go:725  [n2,s2,r9/?:{-}] applying preemptive snapshot at index 24 (id=3c9cb8a7, encoded size=18858, 1 rocksdb batches, 14 log entries)
+I171204 22:30:33.376072 388 storage/replica_raftstorage.go:733  [n2,s2,r9/?:/Table/1{2-3}] applied preemptive snapshot in 11ms [clear=0ms batch=0ms entries=0ms commit=11ms]
+I171204 22:30:34.117188 46 storage/replica_raftstorage.go:725  [n2,s2,r4/2:{-}] applying Raft snapshot at index 40 (id=6308de28, encoded size=93171, 1 rocksdb batches, 30 log entries)
+I171204 22:30:34.153576 46 storage/replica_raftstorage.go:733  [n2,s2,r4/2:/System/{NodeLive…-tsd}] applied Raft snapshot in 36ms [clear=0ms batch=0ms entries=1ms commit=35ms]
+I171204 22:30:35.794840 383 storage/replica_raftstorage.go:725  [n2,s2,r3/?:{-}] applying preemptive snapshot at index 36 (id=a9427549, encoded size=5303, 1 rocksdb batches, 9 log entries)
+I171204 22:30:35.799311 249 storage/replica_proposal.go:453  [replicate,n2,s2,r4/2:/System/{NodeLive…-tsd}] new range lease repl=(n2,s2):2 start=1512426635.451733895,1 epo=1 pro=1512426635.540752377,0 following repl=(n1,s1):1 start=0.000000000,0 exp=1512426635.451733895,0 pro=1512426626.451769432,0
+I171204 22:30:35.799804 29 storage/replica_raftstorage.go:516  [replicate,n2,s2,r4/2:/System/{NodeLive…-tsd}] generated preemptive snapshot 57d84814 at index 43
+I171204 22:30:35.801196 29 storage/store.go:3494  [replicate,n2,s2,r4/2:/System/{NodeLive…-tsd}] streamed snapshot to (n3,s3):?: kv pairs: 38, log entries: 33, rate-limit: 8.0 MiB/sec, 1ms
+I171204 22:30:35.809599 383 storage/replica_raftstorage.go:733  [n2,s2,r3/?:/System/NodeLiveness{-Max}] applied preemptive snapshot in 15ms [clear=0ms batch=0ms entries=0ms commit=15ms]
+I171204 22:30:36.159614 29 storage/replica_command.go:3671  [replicate,n2,s2,r4/2:/System/{NodeLive…-tsd}] change replicas (ADD_REPLICA (n3,s3):3): read existing descriptor r4:/System/{NodeLivenessMax-tsd} [(n1,s1):1, (n2,s2):2, next=3]
+I171204 22:30:36.166585 424 storage/replica_raftstorage.go:725  [n2,s2,r6/?:{-}] applying preemptive snapshot at index 22 (id=af1dbec4, encoded size=10228, 1 rocksdb batches, 12 log entries)
+I171204 22:30:36.868755 424 storage/replica_raftstorage.go:733  [n2,s2,r6/?:/{System/tse-Table/System…}] applied preemptive snapshot in 702ms [clear=0ms batch=0ms entries=0ms commit=702ms]
+I171204 22:30:36.944927 30 storage/store.go:2156  [replicaGC,n2,s2,r3/?:/System/NodeLiveness{-Max}] removing replica
+I171204 22:30:37.557972 30 storage/replica.go:767  [replicaGC,n2,s2,r3/?:/System/NodeLiveness{-Max}] removed 12 (3+9) keys in 613ms [clear=0ms commit=613ms]
+I171204 22:30:37.611004 30 storage/store.go:2156  [replicaGC,n2,s2,r6/?:/{System/tse-Table/System…}] removing replica
+I171204 22:30:37.933115 30 storage/replica.go:767  [replicaGC,n2,s2,r6/?:/{System/tse-Table/System…}] removed 10 (0+10) keys in 322ms [clear=0ms commit=322ms]
+W171204 22:30:38.617882 265 storage/store.go:3581  [n2,s2] handle raft ready: 0.7s [processed=0]
+I171204 22:30:38.675138 109 storage/replica_raftstorage.go:725  [n2,s2,r5/?:{-}] applying preemptive snapshot at index 23 (id=9ba6ab63, encoded size=146765, 1 rocksdb batches, 2 log entries)
+I171204 22:30:39.030297 109 storage/replica_raftstorage.go:733  [n2,s2,r5/?:/System/ts{d-e}] applied preemptive snapshot in 355ms [clear=0ms batch=0ms entries=0ms commit=355ms]
+I171204 22:30:39.350617 30 storage/store.go:2156  [replicaGC,n2,s2,r5/?:/System/ts{d-e}] removing replica
+I171204 22:30:39.385529 30 storage/replica.go:767  [replicaGC,n2,s2,r5/?:/System/ts{d-e}] removed 666 (656+10) keys in 35ms [clear=0ms commit=35ms]
+I171204 22:30:39.895033 132 storage/store.go:4174  [n2,s2] sstables (read amplification = 0):
+I171204 22:30:39.895146 132 storage/store.go:4175  [n2,s2] 
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+ Sum      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0         0         0    0.000       0      0
+ Int      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0         0         0    0.000       0      0
+Uptime(secs): 10.1 total, 10.1 interval
+Flush(GB): cumulative 0.000, interval 0.000
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Interval compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
+I171204 22:30:39.895348 135 server/status/runtime.go:223  [n2] runtime stats: 131 MiB RSS, 190 goroutines, 15 MiB/1.0 MiB/26 MiB GO alloc/idle/total, 15 MiB/19 MiB CGO alloc/total, 0.00cgo/sec, 0.00/0.00 %(u/s)time, 0.00 %gc (8x)
+I171204 22:30:40.116666 483 storage/replica_raftstorage.go:725  [n2,s2,r3/2:{-}] applying Raft snapshot at index 39 (id=138c1b82, encoded size=8121, 1 rocksdb batches, 12 log entries)
+I171204 22:30:40.149662 483 storage/replica_raftstorage.go:733  [n2,s2,r3/2:/System/NodeLiveness{-Max}] applied Raft snapshot in 33ms [clear=0ms batch=0ms entries=0ms commit=33ms]
+I171204 22:30:40.886680 113 storage/replica.go:3055  [n2,s2,r4/2:/System/{NodeLive…-tsd}] proposing ADD_REPLICA((n3,s3):3): updated=[(n1,s1):1 (n2,s2):2 (n3,s3):3] next=4
+W171204 22:30:40.900350 175 storage/node_liveness.go:399  [n2,hb] slow heartbeat took 2.0s
+W171204 22:30:41.975404 277 storage/store.go:3581  [n2,s2] handle raft ready: 0.7s [processed=0]
+W171204 22:30:42.739059 353 kv/txn_coord_sender.go:786  [replicate,s2,r4/2:/System/{NodeLive…-tsd},n2] heartbeat to "change-replica" id=f4d03f34 key=/Local/Range/System/NodeLivenessMax/RangeDescriptor rw=true pri=0.03605080 iso=SERIALIZABLE stat=PENDING epo=0 ts=1512426636.159125154,0 orig=1512426636.159125154,0 max=1512426636.659125154,0 wto=false rop=false seq=9 failed: context canceled
+I171204 22:30:43.133052 32 storage/replica_raftstorage.go:516  [raftsnapshot,n2,s2,r4/2:/System/{NodeLive…-tsd}] generated Raft snapshot 8ca7317c at index 56
+I171204 22:30:43.134718 32 storage/store.go:3494  [raftsnapshot,n2,s2,r4/2:/System/{NodeLive…-tsd}] streamed snapshot to (n3,s3):3: kv pairs: 42, log entries: 46, rate-limit: 8.0 MiB/sec, 2ms
+W171204 22:30:45.649511 175 storage/node_liveness.go:399  [n2,hb] slow heartbeat took 2.3s
+W171204 22:30:45.649535 175 storage/node_liveness.go:342  [n2,hb] failed node liveness heartbeat: context deadline exceeded
+I171204 22:30:46.363744 411 storage/replica_raftstorage.go:725  [n2,s2,r5/2:{-}] applying Raft snapshot at index 30 (id=5a959b49, encoded size=238039, 1 rocksdb batches, 8 log entries)
+I171204 22:30:47.046735 411 storage/replica_raftstorage.go:733  [n2,s2,r5/2:/System/ts{d-e}] applied Raft snapshot in 683ms [clear=0ms batch=0ms entries=0ms commit=682ms]
+I171204 22:30:47.066219 477 storage/replica_raftstorage.go:725  [n2,s2,r6/3:{-}] applying Raft snapshot at index 33 (id=443b4880, encoded size=16060, 1 rocksdb batches, 23 log entries)
+I171204 22:30:47.435074 477 storage/replica_raftstorage.go:733  [n2,s2,r6/3:/{System/tse-Table/System…}] applied Raft snapshot in 369ms [clear=0ms batch=0ms entries=0ms commit=368ms]
+I171204 22:30:49.339430 29 storage/replica_raftstorage.go:516  [replicate,n2,s2,r2/2:/System/{-NodeLive…}] generated preemptive snapshot 555e9a32 at index 32
+I171204 22:30:49.340569 29 storage/store.go:3494  [replicate,n2,s2,r2/2:/System/{-NodeLive…}] streamed snapshot to (n3,s3):?: kv pairs: 10, log entries: 22, rate-limit: 8.0 MiB/sec, 1ms
+I171204 22:30:49.345798 536 storage/replica_raftstorage.go:725  [n2,s2,r15/?:{-}] applying preemptive snapshot at index 16 (id=d8db9c21, encoded size=4351, 1 rocksdb batches, 6 log entries)
+I171204 22:30:49.406008 29 storage/replica_command.go:3671  [replicate,n2,s2,r2/2:/System/{-NodeLive…}] change replicas (ADD_REPLICA (n3,s3):3): read existing descriptor r2:/System/{-NodeLiveness} [(n1,s1):1, (n2,s2):2, next=3]
+I171204 22:30:49.700580 536 storage/replica_raftstorage.go:733  [n2,s2,r15/?:/Table/1{8-9}] applied preemptive snapshot in 355ms [clear=0ms batch=0ms entries=0ms commit=354ms]
+I171204 22:30:49.895933 135 server/status/runtime.go:223  [n2] runtime stats: 136 MiB RSS, 192 goroutines, 12 MiB/9.1 MiB/31 MiB GO alloc/idle/total, 16 MiB/21 MiB CGO alloc/total, 129.79cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (2x)
+I171204 22:30:49.966021 30 storage/store.go:2156  [replicaGC,n2,s2,r15/?:/Table/1{8-9}] removing replica
+I171204 22:30:50.056833 30 storage/replica.go:767  [replicaGC,n2,s2,r15/?:/Table/1{8-9}] removed 10 (0+10) keys in 91ms [clear=0ms commit=91ms]
+I171204 22:30:51.892807 540 storage/replica_raftstorage.go:725  [n2,s2,r14/?:{-}] applying preemptive snapshot at index 16 (id=9e010443, encoded size=4365, 1 rocksdb batches, 6 log entries)
+I171204 22:30:52.594291 540 storage/replica_raftstorage.go:733  [n2,s2,r14/?:/Table/1{7-8}] applied preemptive snapshot in 701ms [clear=0ms batch=0ms entries=0ms commit=701ms]
+I171204 22:30:52.623238 581 storage/replica.go:3055  [n2,s2,r2/2:/System/{-NodeLive…}] proposing ADD_REPLICA((n3,s3):3): updated=[(n1,s1):1 (n2,s2):2 (n3,s3):3] next=4
+I171204 22:30:53.712328 560 storage/replica_raftstorage.go:725  [n2,s2,r15/2:{-}] applying Raft snapshot at index 19 (id=620c148a, encoded size=6844, 1 rocksdb batches, 9 log entries)
+I171204 22:30:53.720942 560 storage/replica_raftstorage.go:733  [n2,s2,r15/2:/Table/1{8-9}] applied Raft snapshot in 9ms [clear=0ms batch=0ms entries=0ms commit=8ms]
+W171204 22:30:53.721477 558 storage/replica.go:2141  [n2,s2,r2/2:/System/{-NodeLive…}] context canceled while in command queue: [txn: 6bb59f1f], HeartbeatTxn [/Local/Range/System/""/RangeDescriptor,/Min)
+W171204 22:30:53.721551 516 kv/txn_coord_sender.go:786  [replicate,s2,r2/2:/System/{-NodeLive…},n2] heartbeat to "change-replica" id=6bb59f1f key=/Local/Range/System/""/RangeDescriptor rw=true pri=0.00262051 iso=SERIALIZABLE stat=PENDING epo=0 ts=1512426649.349904978,0 orig=1512426649.349904978,0 max=1512426649.849904978,0 wto=false rop=false seq=9 failed: context canceled
+I171204 22:30:54.372333 30 storage/store.go:2156  [replicaGC,n2,s2,r14/?:/Table/1{7-8}] removing replica
+I171204 22:30:54.442862 30 storage/replica.go:767  [replicaGC,n2,s2,r14/?:/Table/1{7-8}] removed 10 (0+10) keys in 70ms [clear=0ms commit=70ms]
+I171204 22:30:54.808647 576 storage/replica_raftstorage.go:725  [n2,s2,r8/?:{-}] applying preemptive snapshot at index 22 (id=6e6f513a, encoded size=10019, 1 rocksdb batches, 12 log entries)
+I171204 22:30:54.808842 234 storage/replica_proposal.go:453  [replicate,n2,s2,r9/2:/Table/1{2-3}] new range lease repl=(n2,s2):2 start=1512426635.451733895,1 epo=1 pro=1512426653.721996368,0 following repl=(n1,s1):1 start=0.000000000,0 exp=1512426635.451733895,0 pro=1512426626.451769432,0
+I171204 22:30:54.809529 29 storage/replica_raftstorage.go:516  [replicate,n2,s2,r9/2:/Table/1{2-3}] generated preemptive snapshot b9473dbc at index 29
+I171204 22:30:54.810729 29 storage/store.go:3494  [replicate,n2,s2,r9/2:/Table/1{2-3}] streamed snapshot to (n3,s3):?: kv pairs: 47, log entries: 19, rate-limit: 8.0 MiB/sec, 1ms
+I171204 22:30:54.823294 576 storage/replica_raftstorage.go:733  [n2,s2,r8/?:/Table/1{1-2}] applied preemptive snapshot in 15ms [clear=0ms batch=0ms entries=0ms commit=14ms]
+I171204 22:30:54.823950 29 storage/replica_command.go:3671  [replicate,n2,s2,r9/2:/Table/1{2-3}] change replicas (ADD_REPLICA (n3,s3):3): read existing descriptor r9:/Table/1{2-3} [(n1,s1):1, (n2,s2):2, next=3]
+I171204 22:30:55.191268 587 storage/replica_raftstorage.go:725  [n2,s2,r14/2:{-}] applying Raft snapshot at index 19 (id=794ef0f7, encoded size=6858, 1 rocksdb batches, 9 log entries)
+I171204 22:30:55.540086 587 storage/replica_raftstorage.go:733  [n2,s2,r14/2:/Table/1{7-8}] applied Raft snapshot in 349ms [clear=0ms batch=0ms entries=0ms commit=348ms]
+I171204 22:30:57.178193 30 storage/store.go:2156  [replicaGC,n2,s2,r8/?:/Table/1{1-2}] removing replica
+I171204 22:30:57.308875 30 storage/replica.go:767  [replicaGC,n2,s2,r8/?:/Table/1{1-2}] removed 10 (0+10) keys in 131ms [clear=0ms commit=130ms]
+I171204 22:30:57.362143 590 storage/replica.go:3055  [n2,s2,r9/2:/Table/1{2-3}] proposing ADD_REPLICA((n3,s3):3): updated=[(n1,s1):1 (n2,s2):2 (n3,s3):3] next=4
+W171204 22:30:57.733998 613 kv/txn_coord_sender.go:786  [replicate,s2,r9/2:/Table/1{2-3},n2] heartbeat to "change-replica" id=e80db924 key=/Local/Range/Table/12/RangeDescriptor rw=true pri=0.03552171 iso=SERIALIZABLE stat=PENDING epo=0 ts=1512426654.823577302,0 orig=1512426654.823577302,0 max=1512426655.323577302,0 wto=false rop=false seq=9 failed: context canceled
+I171204 22:30:58.439452 593 storage/replica_raftstorage.go:725  [n2,s2,r8/3:{-}] applying Raft snapshot at index 26 (id=c9b0ac3c, encoded size=12612, 1 rocksdb batches, 16 log entries)
+W171204 22:30:59.177179 255 storage/store.go:3581  [n2,s2] handle raft ready: 0.7s [processed=0]
+I171204 22:30:59.177378 593 storage/replica_raftstorage.go:733  [n2,s2,r8/3:/Table/1{1-2}] applied Raft snapshot in 738ms [clear=0ms batch=0ms entries=0ms commit=738ms]
+I171204 22:30:59.197320 32 storage/replica_raftstorage.go:516  [raftsnapshot,n2,s2,r9/2:/Table/1{2-3}] generated Raft snapshot 89dedf79 at index 34
+I171204 22:30:59.198157 32 storage/store.go:3494  [raftsnapshot,n2,s2,r9/2:/Table/1{2-3}] streamed snapshot to (n3,s3):3: kv pairs: 48, log entries: 24, rate-limit: 8.0 MiB/sec, 1ms
+I171204 22:30:59.895061 135 server/status/runtime.go:223  [n2] runtime stats: 137 MiB RSS, 189 goroutines, 16 MiB/5.0 MiB/31 MiB GO alloc/idle/total, 17 MiB/22 MiB CGO alloc/total, 154.41cgo/sec, 0.02/0.01 %(u/s)time, 0.00 %gc (1x)
+I171204 22:31:04.025489 59 gossip/gossip.go:1255  [n2] node has connected to cluster via gossip
+I171204 22:31:04.025806 59 storage/stores.go:322  [n2] wrote 2 node addresses to persistent storage
+I171204 22:31:04.236482 603 storage/replica_raftstorage.go:725  [n2,s2,r13/?:{-}] applying preemptive snapshot at index 17 (id=7bc8fa63, encoded size=4942, 1 rocksdb batches, 7 log entries)
+W171204 22:31:04.616930 267 storage/store.go:3581  [n2,s2] handle raft ready: 0.7s [processed=0]
+I171204 22:31:04.617272 603 storage/replica_raftstorage.go:733  [n2,s2,r13/?:/Table/1{6-7}] applied preemptive snapshot in 381ms [clear=0ms batch=0ms entries=0ms commit=381ms]
+I171204 22:31:05.794087 30 storage/store.go:2156  [replicaGC,n2,s2,r13/?:/Table/1{6-7}] removing replica
+I171204 22:31:06.429317 30 storage/replica.go:767  [replicaGC,n2,s2,r13/?:/Table/1{6-7}] removed 10 (0+10) keys in 635ms [clear=0ms commit=635ms]
+I171204 22:31:07.154252 636 storage/replica_raftstorage.go:725  [n2,s2,r13/2:{-}] applying Raft snapshot at index 19 (id=8da14f06, encoded size=6863, 1 rocksdb batches, 9 log entries)
+I171204 22:31:07.510167 636 storage/replica_raftstorage.go:733  [n2,s2,r13/2:/Table/1{6-7}] applied Raft snapshot in 356ms [clear=0ms batch=0ms entries=0ms commit=355ms]
+I171204 22:31:08.741728 625 storage/replica_raftstorage.go:725  [n2,s2,r17/?:{-}] applying preemptive snapshot at index 11 (id=9e14dba6, encoded size=601, 1 rocksdb batches, 1 log entries)
+I171204 22:31:09.089166 625 storage/replica_raftstorage.go:733  [n2,s2,r17/?:/{Table/50-Max}] applied preemptive snapshot in 347ms [clear=0ms batch=0ms entries=0ms commit=347ms]
+I171204 22:31:09.894986 135 server/status/runtime.go:223  [n2] runtime stats: 137 MiB RSS, 189 goroutines, 18 MiB/2.2 MiB/31 MiB GO alloc/idle/total, 18 MiB/23 MiB CGO alloc/total, 95.60cgo/sec, 0.01/0.01 %(u/s)time, 0.00 %gc (1x)
+I171204 22:31:10.201333 30 storage/store.go:2156  [replicaGC,n2,s2,r17/?:/{Table/50-Max}] removing replica
+I171204 22:31:10.539070 30 storage/replica.go:767  [replicaGC,n2,s2,r17/?:/{Table/50-Max}] removed 10 (0+10) keys in 338ms [clear=0ms commit=338ms]
+I171204 22:31:10.904822 722 storage/replica_raftstorage.go:725  [n2,s2,r7/?:{-}] applying preemptive snapshot at index 36 (id=8ae57068, encoded size=25264, 1 rocksdb batches, 26 log entries)
+I171204 22:31:11.250083 722 storage/replica_raftstorage.go:733  [n2,s2,r7/?:/Table/{SystemCon…-11}] applied preemptive snapshot in 345ms [clear=0ms batch=0ms entries=0ms commit=345ms]
+I171204 22:31:12.204479 30 storage/store.go:2156  [replicaGC,n2,s2,r7/?:/Table/{SystemCon…-11}] removing replica
+I171204 22:31:12.342219 30 storage/replica.go:767  [replicaGC,n2,s2,r7/?:/Table/{SystemCon…-11}] removed 44 (32+12) keys in 138ms [clear=0ms commit=138ms]
+I171204 22:31:12.723403 709 storage/replica_raftstorage.go:725  [n2,s2,r17/2:{-}] applying Raft snapshot at index 14 (id=32f1bf3d, encoded size=3099, 1 rocksdb batches, 4 log entries)
+I171204 22:31:12.734136 709 storage/replica_raftstorage.go:733  [n2,s2,r17/2:/{Table/50-Max}] applied Raft snapshot in 11ms [clear=0ms batch=0ms entries=0ms commit=11ms]
+I171204 22:31:14.496579 755 storage/replica_raftstorage.go:725  [n2,s2,r10/?:{-}] applying preemptive snapshot at index 84 (id=8336f91b, encoded size=50751, 1 rocksdb batches, 17 log entries)
+I171204 22:31:14.842892 755 storage/replica_raftstorage.go:733  [n2,s2,r10/?:/Table/1{3-4}] applied preemptive snapshot in 346ms [clear=0ms batch=0ms entries=0ms commit=346ms]
+I171204 22:31:15.945556 743 storage/replica_raftstorage.go:725  [n2,s2,r7/3:{-}] applying Raft snapshot at index 40 (id=824e4c66, encoded size=27857, 1 rocksdb batches, 30 log entries)
+I171204 22:31:16.306410 743 storage/replica_raftstorage.go:733  [n2,s2,r7/3:/Table/{SystemCon…-11}] applied Raft snapshot in 361ms [clear=0ms batch=0ms entries=0ms commit=360ms]
+I171204 22:31:19.588764 729 storage/replica_raftstorage.go:725  [n2,s2,r12/?:{-}] applying preemptive snapshot at index 17 (id=45174c18, encoded size=4756, 1 rocksdb batches, 7 log entries)
+I171204 22:31:19.595275 729 storage/replica_raftstorage.go:733  [n2,s2,r12/?:/Table/1{5-6}] applied preemptive snapshot in 6ms [clear=0ms batch=0ms entries=0ms commit=6ms]
+I171204 22:31:19.894981 135 server/status/runtime.go:223  [n2] runtime stats: 139 MiB RSS, 190 goroutines, 12 MiB/8.2 MiB/31 MiB GO alloc/idle/total, 18 MiB/24 MiB CGO alloc/total, 99.70cgo/sec, 0.02/0.01 %(u/s)time, 0.00 %gc (2x)
+I171204 22:31:20.391731 748 storage/replica_raftstorage.go:725  [n2,s2,r1/?:{-}] applying preemptive snapshot at index 137 (id=4f212e3f, encoded size=10496, 1 rocksdb batches, 14 log entries)
+I171204 22:31:20.402808 748 storage/replica_raftstorage.go:733  [n2,s2,r1/?:/{Min-System/}] applied preemptive snapshot in 11ms [clear=0ms batch=0ms entries=0ms commit=11ms]
+I171204 22:31:23.017113 752 storage/replica_raftstorage.go:725  [n2,s2,r16/?:{-}] applying preemptive snapshot at index 17 (id=db0ff719, encoded size=4672, 1 rocksdb batches, 7 log entries)
+I171204 22:31:23.361750 752 storage/replica_raftstorage.go:733  [n2,s2,r16/?:/Table/{19-50}] applied preemptive snapshot in 345ms [clear=0ms batch=0ms entries=0ms commit=344ms]
+I171204 22:31:24.424604 30 storage/store.go:2156  [replicaGC,n2,s2,r16/?:/Table/{19-50}] removing replica
+I171204 22:31:24.465453 30 storage/replica.go:767  [replicaGC,n2,s2,r16/?:/Table/{19-50}] removed 10 (0+10) keys in 41ms [clear=0ms commit=41ms]
+I171204 22:31:26.247328 688 storage/replica_raftstorage.go:725  [n2,s2,r16/2:{-}] applying Raft snapshot at index 19 (id=f1a1a31b, encoded size=6593, 1 rocksdb batches, 9 log entries)
+I171204 22:31:26.267000 688 storage/replica_raftstorage.go:733  [n2,s2,r16/2:/Table/{19-50}] applied Raft snapshot in 20ms [clear=0ms batch=0ms entries=0ms commit=19ms]
+I171204 22:31:29.894597 133 gossip/gossip.go:478  [n2] gossip status (ok, 3 nodes)
+gossip client (1/3 cur/max conns)
+  1: roach1:26257 (1m0s: infos 51/320 sent/received, bytes 16620B/171546B sent/received)
+gossip server (0/3 cur/max conns, infos 51/320 sent/received, bytes 16620B/171546B sent/received)
+I171204 22:31:29.894936 135 server/status/runtime.go:223  [n2] runtime stats: 143 MiB RSS, 190 goroutines, 16 MiB/5.2 MiB/31 MiB GO alloc/idle/total, 19 MiB/25 MiB CGO alloc/total, 122.90cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:31:30.105607 767 storage/replica_raftstorage.go:725  [n2,s2,r11/?:{-}] applying preemptive snapshot at index 20 (id=d2f1e56c, encoded size=6926, 1 rocksdb batches, 10 log entries)
+I171204 22:31:30.451363 767 storage/replica_raftstorage.go:733  [n2,s2,r11/?:/Table/1{4-5}] applied preemptive snapshot in 346ms [clear=0ms batch=0ms entries=0ms commit=345ms]
+W171204 22:31:31.574835 248 storage/store.go:3581  [n2,s2] handle raft ready: 0.6s [processed=0]
+I171204 22:31:33.016155 260 storage/replica_proposal.go:453  [n2,s2,r17/2:/{Table/50-Max}] new range lease repl=(n2,s2):2 start=1512426692.648450160,0 epo=1 pro=1512426692.648456115,0 following repl=(n1,s1):1 start=0.000000000,0 epo=1 pro=1512426666.405533462,0
+I171204 22:31:39.895020 135 server/status/runtime.go:223  [n2] runtime stats: 143 MiB RSS, 189 goroutines, 18 MiB/2.4 MiB/31 MiB GO alloc/idle/total, 19 MiB/25 MiB CGO alloc/total, 80.70cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:31:49.894802 135 server/status/runtime.go:223  [n2] runtime stats: 147 MiB RSS, 189 goroutines, 16 MiB/6.4 MiB/33 MiB GO alloc/idle/total, 19 MiB/25 MiB CGO alloc/total, 45.50cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:31:50.524595 28 storage/replica_command.go:2734  [split,n2,s2,r17/2:/{Table/50-Max}] initiating a split of this range at key /Table/51 [r31]
+W171204 22:31:51.564514 271 storage/store.go:3581  [n2,s2] handle raft ready: 1.0s [processed=0]
+W171204 22:31:51.564525 256 storage/store.go:3581  [n2,s2] handle raft ready: 0.6s [processed=0]
+W171204 22:31:52.986216 274 storage/store.go:3581  [n2,s2] handle raft ready: 1.0s [processed=0]
+W171204 22:31:54.102680 226 storage/store.go:3581  [n2,s2] handle raft ready: 0.5s [processed=0]
+I171204 22:31:54.129815 244 storage/replica_proposal.go:453  [n2,s2,r17/2:/{Table/50-Max}] new range lease repl=(n2,s2):2 start=1512426692.648450160,0 epo=1 pro=1512426692.648456115,0 following repl=(n2,s2):2 start=1512426692.648450160,0 epo=1 pro=1512426692.648456115,0
+I171204 22:31:59.894993 135 server/status/runtime.go:223  [n2] runtime stats: 153 MiB RSS, 190 goroutines, 17 MiB/5.5 MiB/33 MiB GO alloc/idle/total, 20 MiB/26 MiB CGO alloc/total, 100.80cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:32:09.894915 135 server/status/runtime.go:223  [n2] runtime stats: 154 MiB RSS, 190 goroutines, 17 MiB/5.1 MiB/33 MiB GO alloc/idle/total, 20 MiB/26 MiB CGO alloc/total, 53.90cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:32:19.894825 135 server/status/runtime.go:223  [n2] runtime stats: 154 MiB RSS, 190 goroutines, 16 MiB/6.6 MiB/33 MiB GO alloc/idle/total, 20 MiB/26 MiB CGO alloc/total, 61.70cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:32:29.894737 133 gossip/gossip.go:478  [n2] gossip status (ok, 3 nodes)
+gossip client (1/3 cur/max conns)
+  1: roach1:26257 (2m0s: infos 56/536 sent/received, bytes 18118B/224258B sent/received)
+gossip server (0/3 cur/max conns, infos 56/536 sent/received, bytes 18118B/224258B sent/received)
+I171204 22:32:29.895219 135 server/status/runtime.go:223  [n2] runtime stats: 154 MiB RSS, 190 goroutines, 16 MiB/7.2 MiB/33 MiB GO alloc/idle/total, 20 MiB/26 MiB CGO alloc/total, 61.30cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:32:39.895132 135 server/status/runtime.go:223  [n2] runtime stats: 156 MiB RSS, 190 goroutines, 15 MiB/7.9 MiB/33 MiB GO alloc/idle/total, 20 MiB/26 MiB CGO alloc/total, 51.60cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:32:49.894919 135 server/status/runtime.go:223  [n2] runtime stats: 158 MiB RSS, 190 goroutines, 14 MiB/8.6 MiB/33 MiB GO alloc/idle/total, 20 MiB/26 MiB CGO alloc/total, 62.70cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:32:59.896738 135 server/status/runtime.go:223  [n2] runtime stats: 158 MiB RSS, 190 goroutines, 14 MiB/8.7 MiB/33 MiB GO alloc/idle/total, 20 MiB/27 MiB CGO alloc/total, 54.90cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:33:09.894938 135 server/status/runtime.go:223  [n2] runtime stats: 158 MiB RSS, 190 goroutines, 15 MiB/7.8 MiB/33 MiB GO alloc/idle/total, 19 MiB/27 MiB CGO alloc/total, 58.81cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:33:19.895022 135 server/status/runtime.go:223  [n2] runtime stats: 158 MiB RSS, 190 goroutines, 14 MiB/8.5 MiB/33 MiB GO alloc/idle/total, 19 MiB/27 MiB CGO alloc/total, 57.80cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+W171204 22:33:28.181997 276 storage/store.go:3581  [n2,s2] handle raft ready: 1.0s [processed=0]
+I171204 22:33:29.894641 133 gossip/gossip.go:478  [n2] gossip status (ok, 3 nodes)
+gossip client (1/3 cur/max conns)
+  1: roach1:26257 (3m0s: infos 58/754 sent/received, bytes 18617B/251799B sent/received)
+gossip server (0/3 cur/max conns, infos 58/754 sent/received, bytes 18617B/251799B sent/received)
+I171204 22:33:29.895124 135 server/status/runtime.go:223  [n2] runtime stats: 158 MiB RSS, 190 goroutines, 14 MiB/8.8 MiB/33 MiB GO alloc/idle/total, 19 MiB/27 MiB CGO alloc/total, 48.00cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:33:39.895446 135 server/status/runtime.go:223  [n2] runtime stats: 158 MiB RSS, 190 goroutines, 15 MiB/8.0 MiB/33 MiB GO alloc/idle/total, 27 MiB/35 MiB CGO alloc/total, 56.60cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:33:49.895109 135 server/status/runtime.go:223  [n2] runtime stats: 159 MiB RSS, 190 goroutines, 14 MiB/8.4 MiB/33 MiB GO alloc/idle/total, 27 MiB/35 MiB CGO alloc/total, 58.20cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:33:59.896013 135 server/status/runtime.go:223  [n2] runtime stats: 159 MiB RSS, 190 goroutines, 15 MiB/7.7 MiB/33 MiB GO alloc/idle/total, 27 MiB/35 MiB CGO alloc/total, 55.50cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:34:09.895637 135 server/status/runtime.go:223  [n2] runtime stats: 159 MiB RSS, 190 goroutines, 14 MiB/8.7 MiB/33 MiB GO alloc/idle/total, 27 MiB/35 MiB CGO alloc/total, 56.60cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:34:19.894976 135 server/status/runtime.go:223  [n2] runtime stats: 160 MiB RSS, 190 goroutines, 15 MiB/7.5 MiB/33 MiB GO alloc/idle/total, 27 MiB/35 MiB CGO alloc/total, 58.20cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:34:29.894639 133 gossip/gossip.go:478  [n2] gossip status (ok, 3 nodes)
+gossip client (1/3 cur/max conns)
+  1: roach1:26257 (4m0s: infos 60/988 sent/received, bytes 19116B/281446B sent/received)
+gossip server (0/3 cur/max conns, infos 60/988 sent/received, bytes 19116B/281446B sent/received)
+I171204 22:34:29.895215 135 server/status/runtime.go:223  [n2] runtime stats: 160 MiB RSS, 190 goroutines, 14 MiB/8.7 MiB/33 MiB GO alloc/idle/total, 27 MiB/35 MiB CGO alloc/total, 67.80cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:34:39.895017 135 server/status/runtime.go:223  [n2] runtime stats: 160 MiB RSS, 190 goroutines, 16 MiB/7.1 MiB/33 MiB GO alloc/idle/total, 26 MiB/35 MiB CGO alloc/total, 49.60cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:34:49.896789 135 server/status/runtime.go:223  [n2] runtime stats: 161 MiB RSS, 190 goroutines, 15 MiB/7.1 MiB/33 MiB GO alloc/idle/total, 26 MiB/35 MiB CGO alloc/total, 59.99cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:34:59.895051 135 server/status/runtime.go:223  [n2] runtime stats: 161 MiB RSS, 190 goroutines, 14 MiB/8.5 MiB/33 MiB GO alloc/idle/total, 26 MiB/35 MiB CGO alloc/total, 54.81cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:35:09.895128 135 server/status/runtime.go:223  [n2] runtime stats: 162 MiB RSS, 190 goroutines, 14 MiB/8.1 MiB/33 MiB GO alloc/idle/total, 26 MiB/35 MiB CGO alloc/total, 59.20cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:35:19.894918 135 server/status/runtime.go:223  [n2] runtime stats: 164 MiB RSS, 190 goroutines, 14 MiB/8.1 MiB/33 MiB GO alloc/idle/total, 26 MiB/35 MiB CGO alloc/total, 49.80cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:35:29.894625 133 gossip/gossip.go:478  [n2] gossip status (ok, 3 nodes)
+gossip client (1/3 cur/max conns)
+  1: roach1:26257 (5m0s: infos 62/1211 sent/received, bytes 19615B/309734B sent/received)
+gossip server (0/3 cur/max conns, infos 62/1211 sent/received, bytes 19615B/309734B sent/received)
+I171204 22:35:29.894853 135 server/status/runtime.go:223  [n2] runtime stats: 164 MiB RSS, 190 goroutines, 14 MiB/8.9 MiB/33 MiB GO alloc/idle/total, 25 MiB/35 MiB CGO alloc/total, 56.20cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:35:39.894793 135 server/status/runtime.go:223  [n2] runtime stats: 164 MiB RSS, 190 goroutines, 16 MiB/7.2 MiB/33 MiB GO alloc/idle/total, 25 MiB/35 MiB CGO alloc/total, 54.10cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:35:49.894777 135 server/status/runtime.go:223  [n2] runtime stats: 164 MiB RSS, 190 goroutines, 14 MiB/8.2 MiB/33 MiB GO alloc/idle/total, 25 MiB/35 MiB CGO alloc/total, 73.50cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:35:59.894818 135 server/status/runtime.go:223  [n2] runtime stats: 164 MiB RSS, 190 goroutines, 14 MiB/8.3 MiB/33 MiB GO alloc/idle/total, 25 MiB/35 MiB CGO alloc/total, 55.40cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:36:09.894985 135 server/status/runtime.go:223  [n2] runtime stats: 164 MiB RSS, 190 goroutines, 14 MiB/8.6 MiB/33 MiB GO alloc/idle/total, 25 MiB/35 MiB CGO alloc/total, 62.40cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:36:19.895201 135 server/status/runtime.go:223  [n2] runtime stats: 165 MiB RSS, 190 goroutines, 15 MiB/7.9 MiB/33 MiB GO alloc/idle/total, 25 MiB/35 MiB CGO alloc/total, 59.10cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:36:29.894635 133 gossip/gossip.go:478  [n2] gossip status (ok, 3 nodes)
+gossip client (1/3 cur/max conns)
+  1: roach1:26257 (6m0s: infos 64/1428 sent/received, bytes 20114B/337205B sent/received)
+gossip server (0/3 cur/max conns, infos 64/1428 sent/received, bytes 20114B/337205B sent/received)
+I171204 22:36:29.894915 135 server/status/runtime.go:223  [n2] runtime stats: 165 MiB RSS, 190 goroutines, 16 MiB/6.9 MiB/33 MiB GO alloc/idle/total, 25 MiB/35 MiB CGO alloc/total, 84.30cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:36:39.894842 135 server/status/runtime.go:223  [n2] runtime stats: 166 MiB RSS, 190 goroutines, 16 MiB/6.3 MiB/33 MiB GO alloc/idle/total, 25 MiB/35 MiB CGO alloc/total, 74.80cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:36:49.895352 135 server/status/runtime.go:223  [n2] runtime stats: 166 MiB RSS, 190 goroutines, 15 MiB/7.6 MiB/33 MiB GO alloc/idle/total, 25 MiB/35 MiB CGO alloc/total, 59.20cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:36:59.895687 135 server/status/runtime.go:223  [n2] runtime stats: 166 MiB RSS, 190 goroutines, 14 MiB/9.2 MiB/33 MiB GO alloc/idle/total, 33 MiB/43 MiB CGO alloc/total, 55.10cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:37:09.895297 135 server/status/runtime.go:223  [n2] runtime stats: 167 MiB RSS, 190 goroutines, 14 MiB/9.1 MiB/33 MiB GO alloc/idle/total, 32 MiB/43 MiB CGO alloc/total, 46.30cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:37:19.895682 135 server/status/runtime.go:223  [n2] runtime stats: 167 MiB RSS, 190 goroutines, 14 MiB/8.5 MiB/33 MiB GO alloc/idle/total, 32 MiB/43 MiB CGO alloc/total, 56.30cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:37:29.894686 133 gossip/gossip.go:478  [n2] gossip status (ok, 3 nodes)
+gossip client (1/3 cur/max conns)
+  1: roach1:26257 (7m0s: infos 66/1662 sent/received, bytes 20614B/366905B sent/received)
+gossip server (0/3 cur/max conns, infos 66/1662 sent/received, bytes 20614B/366905B sent/received)
+I171204 22:37:29.895153 135 server/status/runtime.go:223  [n2] runtime stats: 167 MiB RSS, 190 goroutines, 14 MiB/8.5 MiB/33 MiB GO alloc/idle/total, 32 MiB/44 MiB CGO alloc/total, 69.10cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:37:39.895578 135 server/status/runtime.go:223  [n2] runtime stats: 168 MiB RSS, 190 goroutines, 16 MiB/7.2 MiB/33 MiB GO alloc/idle/total, 32 MiB/44 MiB CGO alloc/total, 49.50cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:37:49.895098 135 server/status/runtime.go:223  [n2] runtime stats: 169 MiB RSS, 190 goroutines, 14 MiB/8.5 MiB/33 MiB GO alloc/idle/total, 32 MiB/44 MiB CGO alloc/total, 60.10cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:37:59.895023 135 server/status/runtime.go:223  [n2] runtime stats: 169 MiB RSS, 190 goroutines, 15 MiB/8.0 MiB/33 MiB GO alloc/idle/total, 32 MiB/44 MiB CGO alloc/total, 52.70cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:38:09.895040 135 server/status/runtime.go:223  [n2] runtime stats: 170 MiB RSS, 190 goroutines, 14 MiB/8.1 MiB/33 MiB GO alloc/idle/total, 32 MiB/44 MiB CGO alloc/total, 65.90cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:38:19.895030 135 server/status/runtime.go:223  [n2] runtime stats: 170 MiB RSS, 190 goroutines, 15 MiB/7.4 MiB/33 MiB GO alloc/idle/total, 32 MiB/44 MiB CGO alloc/total, 58.50cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:38:29.894671 133 gossip/gossip.go:478  [n2] gossip status (ok, 3 nodes)
+gossip client (1/3 cur/max conns)
+  1: roach1:26257 (8m0s: infos 68/1885 sent/received, bytes 21114B/395242B sent/received)
+gossip server (0/3 cur/max conns, infos 68/1885 sent/received, bytes 21114B/395242B sent/received)
+I171204 22:38:29.895003 135 server/status/runtime.go:223  [n2] runtime stats: 170 MiB RSS, 190 goroutines, 14 MiB/8.4 MiB/33 MiB GO alloc/idle/total, 32 MiB/44 MiB CGO alloc/total, 57.50cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:38:39.895157 135 server/status/runtime.go:223  [n2] runtime stats: 172 MiB RSS, 190 goroutines, 14 MiB/8.6 MiB/33 MiB GO alloc/idle/total, 32 MiB/44 MiB CGO alloc/total, 56.90cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:38:49.894991 135 server/status/runtime.go:223  [n2] runtime stats: 172 MiB RSS, 190 goroutines, 14 MiB/8.6 MiB/33 MiB GO alloc/idle/total, 32 MiB/44 MiB CGO alloc/total, 56.80cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:38:59.894952 135 server/status/runtime.go:223  [n2] runtime stats: 172 MiB RSS, 190 goroutines, 14 MiB/8.6 MiB/33 MiB GO alloc/idle/total, 32 MiB/44 MiB CGO alloc/total, 59.90cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:39:09.895094 135 server/status/runtime.go:223  [n2] runtime stats: 172 MiB RSS, 190 goroutines, 15 MiB/7.6 MiB/33 MiB GO alloc/idle/total, 31 MiB/44 MiB CGO alloc/total, 53.00cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:39:19.894942 135 server/status/runtime.go:223  [n2] runtime stats: 172 MiB RSS, 190 goroutines, 14 MiB/8.6 MiB/33 MiB GO alloc/idle/total, 31 MiB/44 MiB CGO alloc/total, 50.60cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:39:29.894728 133 gossip/gossip.go:478  [n2] gossip status (ok, 3 nodes)
+gossip client (1/3 cur/max conns)
+  1: roach1:26257 (9m0s: infos 70/2102 sent/received, bytes 21614B/422757B sent/received)
+gossip server (0/3 cur/max conns, infos 70/2102 sent/received, bytes 21614B/422757B sent/received)
+I171204 22:39:29.895228 135 server/status/runtime.go:223  [n2] runtime stats: 172 MiB RSS, 190 goroutines, 14 MiB/8.6 MiB/33 MiB GO alloc/idle/total, 31 MiB/44 MiB CGO alloc/total, 64.90cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:39:39.895383 135 server/status/runtime.go:223  [n2] runtime stats: 173 MiB RSS, 190 goroutines, 16 MiB/7.2 MiB/33 MiB GO alloc/idle/total, 31 MiB/44 MiB CGO alloc/total, 53.20cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:39:49.895052 135 server/status/runtime.go:223  [n2] runtime stats: 174 MiB RSS, 190 goroutines, 15 MiB/7.4 MiB/33 MiB GO alloc/idle/total, 31 MiB/44 MiB CGO alloc/total, 60.40cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:39:59.895294 135 server/status/runtime.go:223  [n2] runtime stats: 174 MiB RSS, 190 goroutines, 13 MiB/9.4 MiB/33 MiB GO alloc/idle/total, 31 MiB/44 MiB CGO alloc/total, 57.60cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:40:09.894924 135 server/status/runtime.go:223  [n2] runtime stats: 174 MiB RSS, 190 goroutines, 14 MiB/9.0 MiB/33 MiB GO alloc/idle/total, 31 MiB/44 MiB CGO alloc/total, 57.50cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:40:19.894959 135 server/status/runtime.go:223  [n2] runtime stats: 174 MiB RSS, 190 goroutines, 14 MiB/9.0 MiB/33 MiB GO alloc/idle/total, 39 MiB/52 MiB CGO alloc/total, 56.30cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:40:29.894594 133 gossip/gossip.go:478  [n2] gossip status (ok, 3 nodes)
+gossip client (1/3 cur/max conns)
+  1: roach1:26257 (10m0s: infos 72/2336 sent/received, bytes 22114B/452455B sent/received)
+gossip server (0/3 cur/max conns, infos 72/2336 sent/received, bytes 22114B/452455B sent/received)
+I171204 22:40:29.894806 135 server/status/runtime.go:223  [n2] runtime stats: 175 MiB RSS, 190 goroutines, 13 MiB/9.3 MiB/33 MiB GO alloc/idle/total, 39 MiB/52 MiB CGO alloc/total, 60.50cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:40:39.895023 135 server/status/runtime.go:223  [n2] runtime stats: 175 MiB RSS, 190 goroutines, 14 MiB/8.1 MiB/33 MiB GO alloc/idle/total, 39 MiB/52 MiB CGO alloc/total, 57.00cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:40:39.895137 132 storage/store.go:4174  [n2,s2] sstables (read amplification = 0):
+I171204 22:40:39.895238 132 storage/store.go:4175  [n2,s2] 
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+ Sum      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0         0         0    0.000       0      0
+ Int      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0         0         0    0.000       0      0
+Uptime(secs): 610.1 total, 610.1 interval
+Flush(GB): cumulative 0.000, interval 0.000
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Interval compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
+I171204 22:40:49.894899 135 server/status/runtime.go:223  [n2] runtime stats: 176 MiB RSS, 190 goroutines, 14 MiB/8.3 MiB/33 MiB GO alloc/idle/total, 39 MiB/52 MiB CGO alloc/total, 60.40cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:40:59.895186 135 server/status/runtime.go:223  [n2] runtime stats: 176 MiB RSS, 190 goroutines, 13 MiB/9.2 MiB/33 MiB GO alloc/idle/total, 39 MiB/52 MiB CGO alloc/total, 43.10cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:41:09.895184 135 server/status/runtime.go:223  [n2] runtime stats: 178 MiB RSS, 190 goroutines, 14 MiB/8.6 MiB/33 MiB GO alloc/idle/total, 39 MiB/52 MiB CGO alloc/total, 60.50cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:41:19.895395 135 server/status/runtime.go:223  [n2] runtime stats: 178 MiB RSS, 190 goroutines, 13 MiB/9.3 MiB/33 MiB GO alloc/idle/total, 39 MiB/52 MiB CGO alloc/total, 56.70cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:41:29.894562 133 gossip/gossip.go:478  [n2] gossip status (ok, 3 nodes)
+gossip client (1/3 cur/max conns)
+  1: roach1:26257 (11m0s: infos 74/2559 sent/received, bytes 22614B/480792B sent/received)
+gossip server (0/3 cur/max conns, infos 74/2559 sent/received, bytes 22614B/480792B sent/received)
+I171204 22:41:29.894832 135 server/status/runtime.go:223  [n2] runtime stats: 178 MiB RSS, 190 goroutines, 14 MiB/9.0 MiB/33 MiB GO alloc/idle/total, 38 MiB/52 MiB CGO alloc/total, 52.00cgo/sec, 0.01/0.01 %(u/s)time, 0.00 %gc (1x)
+I171204 22:41:39.895196 135 server/status/runtime.go:223  [n2] runtime stats: 178 MiB RSS, 190 goroutines, 13 MiB/9.5 MiB/33 MiB GO alloc/idle/total, 38 MiB/52 MiB CGO alloc/total, 46.50cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:41:49.894901 135 server/status/runtime.go:223  [n2] runtime stats: 180 MiB RSS, 190 goroutines, 13 MiB/9.7 MiB/33 MiB GO alloc/idle/total, 38 MiB/52 MiB CGO alloc/total, 45.80cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:41:59.895319 135 server/status/runtime.go:223  [n2] runtime stats: 181 MiB RSS, 190 goroutines, 13 MiB/9.6 MiB/33 MiB GO alloc/idle/total, 38 MiB/52 MiB CGO alloc/total, 50.30cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:42:09.894922 135 server/status/runtime.go:223  [n2] runtime stats: 181 MiB RSS, 190 goroutines, 13 MiB/9.7 MiB/33 MiB GO alloc/idle/total, 38 MiB/52 MiB CGO alloc/total, 49.80cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:42:19.894920 135 server/status/runtime.go:223  [n2] runtime stats: 181 MiB RSS, 190 goroutines, 13 MiB/9.8 MiB/33 MiB GO alloc/idle/total, 38 MiB/52 MiB CGO alloc/total, 44.00cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:42:29.894703 133 gossip/gossip.go:478  [n2] gossip status (ok, 3 nodes)
+gossip client (1/3 cur/max conns)
+  1: roach1:26257 (12m0s: infos 76/2776 sent/received, bytes 23114B/508307B sent/received)
+gossip server (0/3 cur/max conns, infos 76/2776 sent/received, bytes 23114B/508307B sent/received)
+I171204 22:42:29.895228 135 server/status/runtime.go:223  [n2] runtime stats: 181 MiB RSS, 190 goroutines, 13 MiB/9.2 MiB/33 MiB GO alloc/idle/total, 38 MiB/52 MiB CGO alloc/total, 52.00cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:42:39.894985 135 server/status/runtime.go:223  [n2] runtime stats: 183 MiB RSS, 190 goroutines, 13 MiB/9.2 MiB/33 MiB GO alloc/idle/total, 38 MiB/52 MiB CGO alloc/total, 42.50cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:42:49.894876 135 server/status/runtime.go:223  [n2] runtime stats: 183 MiB RSS, 190 goroutines, 13 MiB/9.7 MiB/33 MiB GO alloc/idle/total, 38 MiB/52 MiB CGO alloc/total, 50.40cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:42:59.895109 135 server/status/runtime.go:223  [n2] runtime stats: 183 MiB RSS, 190 goroutines, 13 MiB/9.5 MiB/33 MiB GO alloc/idle/total, 38 MiB/52 MiB CGO alloc/total, 46.50cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:43:09.895232 135 server/status/runtime.go:223  [n2] runtime stats: 183 MiB RSS, 190 goroutines, 13 MiB/9.1 MiB/33 MiB GO alloc/idle/total, 38 MiB/52 MiB CGO alloc/total, 44.40cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:43:19.895108 135 server/status/runtime.go:223  [n2] runtime stats: 183 MiB RSS, 190 goroutines, 13 MiB/9.9 MiB/33 MiB GO alloc/idle/total, 38 MiB/52 MiB CGO alloc/total, 48.70cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:43:29.894691 133 gossip/gossip.go:478  [n2] gossip status (ok, 3 nodes)
+gossip client (1/3 cur/max conns)
+  1: roach1:26257 (13m0s: infos 78/3010 sent/received, bytes 23614B/538005B sent/received)
+gossip server (0/3 cur/max conns, infos 78/3010 sent/received, bytes 23614B/538005B sent/received)
+I171204 22:43:29.895239 135 server/status/runtime.go:223  [n2] runtime stats: 185 MiB RSS, 190 goroutines, 13 MiB/9.8 MiB/33 MiB GO alloc/idle/total, 46 MiB/60 MiB CGO alloc/total, 49.60cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I171204 22:43:37.266681 1 cli/start.go:617  received signal 'terminated'
+I171204 22:43:37.271790 1 cli/start.go:644  initiating graceful shutdown of server
+I171204 22:43:37.317384 235 storage/replica_proposal.go:453  [n2,s2,r6/3:/{System/tse-Table/System…}] new range lease repl=(n2,s2):3 start=1512427417.295342122,0 epo=1 pro=1512427417.295344483,0 following repl=(n3,s3):2 start=1512426635.451733895,1 epo=1 pro=1512426635.724432650,0
+I171204 22:43:37.317756 2640 util/stop/stopper.go:474  quiescing; tasks left:
+1      [async] storage.Store: gossip on capacity change
+W171204 22:43:37.317876 330 storage/raft_transport.go:461  [n2] raft transport stream to node 1 failed: rpc error: code = Unavailable desc = transport is closing
+W171204 22:43:37.317917 502 storage/raft_transport.go:461  [n2] raft transport stream to node 3 failed: rpc error: code = Unavailable desc = transport is closing
+W171204 22:43:37.671285 81 gossip/infostore.go:303  [n2] node unavailable; try another peer
+W171204 22:43:37.671315 235 storage/store.go:1411  [n2,s2,r6/3:/{System/tse-Table/System…}] unable to gossip on capacity change: node unavailable; try another peer
+W171204 22:43:37.714328 59 gossip/gossip.go:1241  [n2] no incoming or outgoing connections
+W171204 22:43:37.725717 2819 gossip/infostore.go:303  [n2] node unavailable; try another peer
+I171204 22:43:37.731221 200 vendor/google.golang.org/grpc/grpclog/grpclog.go:75  transport: http2Server.HandleStreams failed to read frame: read tcp 172.19.0.3:26257->172.19.0.2:46906: use of closed network connection
+I171204 22:43:37.731390 2640 storage/engine/rocksdb.go:524  closing rocksdb instance at "/cockroach/cockroach-data/local"
+I171204 22:43:37.753152 2640 storage/engine/rocksdb.go:524  closing rocksdb instance at "/cockroach/cockroach-data"
+I171204 22:43:37.761459 1 cli/start.go:676  server drained and shutdown completed
